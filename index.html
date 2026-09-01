@@ -725,46 +725,30 @@
     </div>
   </footer>
 
-  <!-- ░░░░░░░░░░░░░░░░ AI CHATBOT ░░░░░░░░░░░░░░░░ -->
-  <div class="chatbot-wrapper" id="chatbotWrapper">
-    <button class="chatbot-trigger" id="chatbotTrigger" aria-label="Open chat">
-      <span class="chat-icon">💬</span>
-      <span class="chat-badge" id="chatBadge">1</span>
-    </button>
-    <div class="chatbot-window" id="chatbotWindow" style="display:none" role="dialog" aria-label="Customer support chat">
-      <div class="chat-header">
-        <div class="chat-avatar">🏠</div>
-        <div class="chat-header-info">
-          <strong>Storm Pros Assistant</strong>
-          <span class="chat-status">● Online · Typically replies instantly</span>
-        </div>
-        <button class="chat-close" id="chatClose" aria-label="Close chat">✕</button>
-      </div>
-      <div class="chat-messages" id="chatMessages">
-        <div class="chat-msg bot">
-          <div class="msg-bubble">
-            👋 Hi there! I'm the Storm Pros virtual assistant. I can help with:<br/><br/>
-            • Getting a free inspection<br/>
-            • Service pricing & info<br/>
-            • Insurance claim questions<br/>
-            • Scheduling & availability<br/><br/>
-            What can I help you with today?
-          </div>
-          <div class="chat-quick-replies" id="quickReplies">
-            <button class="quick-btn" data-q="free-inspection">🔍 Free Inspection</button>
-            <button class="quick-btn" data-q="pricing">💰 Pricing</button>
-            <button class="quick-btn" data-q="insurance">📋 Insurance Help</button>
-            <button class="quick-btn" data-q="schedule">📅 Schedule</button>
-          </div>
-        </div>
-      </div>
-      <div class="chat-input-wrap">
-        <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off" />
-        <button id="chatSend" aria-label="Send message">➤</button>
-      </div>
-    </div>
-  </div>
-
   <script src="script.js"></script>
+
+  <!-- Botpress Webchat Integration -->
+  <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+  <script>
+    window.botpress.init({
+      "botId": "c4b45b13-dbc8-4f36-aba8-24780464046f",
+      "clientId": "c4b45b13-dbc8-4f36-aba8-24780464046f",
+      "webhookId": "c4b45b13-dbc8-4f36-aba8-24780464046f",
+      "configuration": {
+        "botName": "Storm Pros Assistant",
+        "botDescription": "24/7 AI Receptionist",
+        "website": {},
+        "email": {},
+        "phone": {},
+        "termsOfService": {},
+        "privacyPolicy": {},
+        "color": "#e65100",
+        "variant": "solid",
+        "themeMode": "light",
+        "fontFamily": "inter",
+        "radius": 1
+      }
+    });
+  </script>
 </body>
 </html>
