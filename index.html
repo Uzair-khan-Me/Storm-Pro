@@ -5,64 +5,294 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Storm Pros Roofing & Restoration LLC | The Woodlands, TX</title>
   <meta name="description" content="Storm Pros Roofing & Restoration LLC — Top-rated roofing contractor in The Woodlands and North Houston. Roof repair, shingle & metal roofs, free inspections. 4.9★ rated. Call (936) 204-0141." />
-  <meta name="keywords" content="roofing contractor Texas, roofing contractor The Woodlands, roof repair Conroe TX, storm damage roof repair, metal roof installation Texas, shingle roof replacement, North Houston roofing, insurance roof claim Texas" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://stormprosroofing.com/" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Storm Pros Roofing & Restoration LLC" />
-  <meta property="og:description" content="4.9★ rated roofing contractor in The Woodlands, TX. Free roof inspections. Roof repair, shingle & metal roofs." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://stormprosroofing.com/" />
-
-  <!-- Schema Markup: Local Business -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "RoofingContractor",
-    "name": "Storm Pros Roofing & Restoration LLC",
-    "image": "",
-    "url": "https://stormprosroofing.com",
-    "telephone": "+19362040141",
-    "priceRange": "$250 - $100,000",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "1601 Primrose St",
-      "addressLocality": "Conroe",
-      "addressRegion": "TX",
-      "postalCode": "77385",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 30.2672,
-      "longitude": -95.4652
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "81"
-    },
-    "openingHoursSpecification": [{
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "07:00",
-      "closes": "18:00"
-    }],
-    "sameAs": [
-      "https://www.facebook.com/StormProsRoofingandRestoration/",
-      "https://www.youtube.com/channel/UC5KI1YKkeomWTnJiIMNT3NA/featured"
-    ],
-    "areaServed": ["The Woodlands", "Conroe", "Spring", "Humble", "Kingwood", "North Houston"]
-  }
-  </script>
-
+  
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- EMBEDDED CSS -->
+  <style>
+    /* ░░ CSS VARIABLES & RESET ░░ */
+    :root {
+      --bg-main: #0f172a; /* Dark navy */
+      --bg-darker: #0b1120;
+      --bg-card: #1e293b;
+      --primary: #f97316; /* Orange */
+      --primary-hover: #ea580c;
+      --text-main: #cbd5e1;
+      --text-light: #f8fafc;
+      --border: #334155;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Barlow', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, h5 { font-family: 'Bebas Neue', sans-serif; color: var(--text-light); letter-spacing: 1px; line-height: 1.1; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%; }
+    
+    /* ░░ BUTTONS ░░ */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 24px; font-weight: 700; font-size: 1rem;
+      border-radius: 4px; transition: all 0.3s ease; cursor: pointer;
+      border: none; text-transform: uppercase; letter-spacing: 0.5px; text-align: center;
+    }
+    .btn-orange { background-color: var(--primary); color: #fff; }
+    .btn-orange:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
+    .btn-outline { background-color: transparent; border: 1px solid var(--text-light); color: var(--text-light); }
+    .btn-outline:hover { background-color: rgba(255,255,255,0.1); }
+    .btn-outline-dark { background-color: transparent; border: 1px solid var(--border); color: var(--text-light); }
+    .btn-outline-dark:hover { background-color: var(--border); }
+    .btn-lg { padding: 16px 32px; font-size: 1.1rem; }
+    .btn-block { width: 100%; }
+
+    /* ░░ NAVIGATION ░░ */
+    .nav-header {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px);
+      z-index: 1000; border-bottom: 1px solid var(--border); transition: all 0.3s ease;
+    }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-icon { font-size: 2rem; }
+    .logo-main { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--text-light); line-height: 1; }
+    .logo-sub { display: block; font-size: 0.75rem; color: var(--primary); font-weight: 700; text-transform: uppercase; }
+    
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { color: var(--text-light); font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--primary); }
+    
+    .nav-cta { display: flex; align-items: center; gap: 8px; }
+    
+    .hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .hamburger span { display: block; width: 25px; height: 3px; background-color: var(--text-light); transition: 0.3s; }
+
+    .sticky-call {
+      display: none; position: fixed; bottom: 0; left: 0; width: 100%;
+      background: var(--primary); color: #fff; text-align: center; padding: 15px;
+      font-weight: 700; font-size: 1.1rem; z-index: 999; box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* ░░ HERO SECTION ░░ */
+    .hero {
+      position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding-top: 80px; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+      background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+    }
+    .hero-grid-pattern {
+      position: absolute; width: 100%; height: 100%; opacity: 0.3;
+      background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1); padding: 8px 20px; border-radius: 30px;
+      font-size: 0.9rem; color: var(--text-light); margin-bottom: 24px;
+    }
+    .stars { color: #fbbf24; }
+    
+    .hero-title { font-size: 6rem; display: flex; flex-direction: column; margin-bottom: 24px; }
+    .title-accent { color: var(--primary); }
+    
+    .hero-sub { font-size: 1.25rem; max-width: 650px; margin: 0 auto 40px; color: var(--text-main); }
+    .hero-ctas { display: flex; gap: 16px; justify-content: center; margin-bottom: 50px; }
+    
+    .hero-trust { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .trust-pill {
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; color: var(--text-light);
+    }
+    .trust-pill span { color: #22c55e; margin-right: 5px;}
+
+    .hero-scroll-hint {
+      position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 10px; opacity: 0.7;
+    }
+    .scroll-arrow { width: 10px; height: 10px; border-right: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(45deg); animation: bounce 2s infinite; }
+
+    @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(45deg); } 40% { transform: translateY(-10px) rotate(45deg); } 60% { transform: translateY(-5px) rotate(45deg); } }
+
+    /* ░░ TRUST BAR ░░ */
+    .trust-bar { background: var(--bg-darker); padding: 30px 0; border-bottom: 1px solid var(--border); }
+    .trust-bar-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .trust-item { text-align: center; }
+    .trust-num { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--text-light); }
+    .trust-label { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-main); }
+    .trust-divider { width: 1px; height: 40px; background: var(--border); }
+
+    /* ░░ SECTIONS GENERAL ░░ */
+    .section { padding: 100px 0; border-bottom: 1px solid var(--border); }
+    .section-label { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px; text-align: center; }
+    .section-title { font-size: 3.5rem; margin-bottom: 20px; text-align: center; }
+    .section-title em { font-style: normal; color: var(--primary); }
+    .section-sub { max-width: 700px; margin: 0 auto 60px; font-size: 1.1rem; text-align: center; }
+
+    /* ░░ SERVICES ░░ */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .service-card {
+      background: var(--bg-card); padding: 40px 30px; border-radius: 8px;
+      border: 1px solid var(--border); transition: transform 0.3s, border-color 0.3s; position: relative;
+    }
+    .service-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+    .featured-service { border-color: var(--primary); box-shadow: 0 10px 30px rgba(249, 115, 22, 0.1); }
+    .featured-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+    .service-icon { font-size: 3rem; margin-bottom: 20px; }
+    .service-card h3 { font-size: 2rem; margin-bottom: 10px; }
+    .service-price { color: var(--primary); font-weight: 700; font-size: 1.2rem; margin-bottom: 15px; }
+    .service-desc { margin-bottom: 20px; }
+    .service-features li { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; font-size: 0.95rem; }
+    .service-cta { margin-top: 20px; width: 100%; }
+
+    /* ░░ MID CTA BANNER ░░ */
+    .cta-banner { background: var(--primary); padding: 60px 0; color: #fff; text-align: center; position: relative; overflow: hidden; }
+    .cta-banner-text h2 { font-size: 3rem; color: #fff; margin-bottom: 15px; }
+    .cta-banner-text p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; color: rgba(255,255,255,0.9); }
+    .cta-banner-actions { display: flex; gap: 16px; justify-content: center; }
+    .btn-white-outline { border: 2px solid #fff; color: #fff; }
+    .btn-white-outline:hover { background: #fff; color: var(--primary); }
+
+    /* ░░ ABOUT ░░ */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-visual { background: var(--bg-card); border-radius: 12px; padding: 40px; text-align: center; border: 1px solid var(--border); }
+    .roof-graphic { font-size: 8rem; line-height: 1; margin-bottom: 20px; }
+    .about-stat-badge { background: var(--bg-main); padding: 20px; border-radius: 8px; border: 1px solid var(--border); display: inline-block; }
+    .stat-big { font-family: 'Bebas Neue'; font-size: 3rem; color: var(--primary); display: block; }
+    .about-content .section-label, .about-content .section-title { text-align: left; }
+    .about-lead { font-size: 1.2rem; font-weight: 600; color: var(--text-light); margin-bottom: 20px; }
+    .about-body { margin-bottom: 30px; }
+    .about-values { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+    .value-item { display: flex; gap: 15px; }
+    .value-icon { font-size: 1.5rem; }
+    .value-item strong { display: block; color: var(--text-light); margin-bottom: 5px; }
+
+    /* ░░ GALLERY ░░ */
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 40px; }
+    .gallery-placeholder { background: var(--bg-card); height: 250px; border-radius: 8px; position: relative; overflow: hidden; border: 1px solid var(--border); display: flex; align-items: flex-end; padding: 20px; }
+    .gallery-overlay span { display: block; font-family: 'Bebas Neue'; font-size: 1.5rem; color: #fff; letter-spacing: 1px; }
+    .gallery-overlay small { color: var(--primary); font-weight: 700; text-transform: uppercase; }
+    .gallery-footer { text-align: center; }
+
+    /* ░░ ESTIMATOR ░░ */
+    .estimator-wrap { max-width: 800px; margin: 0 auto; }
+    .estimator-card { background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border); padding: 40px; }
+    .est-row { margin-bottom: 30px; }
+    .est-row label { display: block; font-weight: 700; color: var(--text-light); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+    
+    .est-slider-wrap { display: flex; align-items: center; gap: 20px; }
+    input[type=range] { flex: 1; -webkit-appearance: none; background: var(--bg-main); height: 8px; border-radius: 4px; outline: none; border: 1px solid var(--border); }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%; background: var(--primary); cursor: pointer; }
+    .est-val { font-weight: 700; color: var(--primary); font-size: 1.2rem; min-width: 100px; text-align: right; }
+
+    .est-tabs { display: flex; gap: 10px; flex-wrap: wrap; }
+    .est-tab { background: var(--bg-main); border: 1px solid var(--border); color: var(--text-main); padding: 10px 20px; border-radius: 4px; cursor: pointer; font-family: 'Barlow'; font-weight: 600; flex: 1; text-align: center; transition: 0.3s; }
+    .est-tab.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+    .estimator-result { margin-top: 40px; padding-top: 30px; border-top: 1px dashed var(--border); text-align: center; }
+    .result-label { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
+    .result-price { font-family: 'Bebas Neue'; font-size: 4rem; color: var(--primary); margin: 10px 0; line-height: 1; }
+    .result-note { margin-bottom: 20px; color: var(--text-main); }
+    .result-insurance { background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); color: #4ade80; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+    .result-disclaimer { font-size: 0.85rem; margin-top: 15px; opacity: 0.7; }
+
+    /* ░░ REVIEWS ░░ */
+    .overall-rating { display: flex; flex-direction: column; align-items: center; margin-bottom: 40px; }
+    .big-stars { color: #fbbf24; font-size: 2rem; letter-spacing: 5px; }
+    .big-score { font-family: 'Bebas Neue'; font-size: 4rem; color: var(--text-light); line-height: 1; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 40px; }
+    .review-card { background: var(--bg-card); padding: 30px; border-radius: 8px; border: 1px solid var(--border); }
+    .review-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+    .reviewer-avatar { width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; }
+    .reviewer-info strong { display: block; color: var(--text-light); }
+    .reviewer-info span { font-size: 0.85rem; }
+    .review-stars { margin-left: auto; color: #fbbf24; }
+    .review-card p { font-style: italic; margin-bottom: 15px; }
+    .review-date { font-size: 0.85rem; opacity: 0.7; }
+    .reviews-footer { text-align: center; }
+
+    /* ░░ AREA BANNER ░░ */
+    .area-banner { background: var(--bg-darker); padding: 40px 0; text-align: center; border-bottom: 1px solid var(--border); }
+    .area-banner h3 { font-size: 2rem; margin-bottom: 15px; }
+    .area-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .area-list span { background: var(--bg-card); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; border: 1px solid var(--border); }
+
+    /* ░░ CONTACT ░░ */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+    .contact-info .section-label, .contact-info .section-title { text-align: left; }
+    .contact-details { margin: 40px 0; }
+    .contact-item { display: flex; gap: 15px; margin-bottom: 25px; align-items: flex-start; }
+    .contact-icon { font-size: 1.5rem; background: var(--bg-card); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 1px solid var(--border); }
+    .contact-item strong { display: block; color: var(--text-light); font-size: 1.1rem; margin-bottom: 5px; }
+    .contact-social { display: flex; gap: 15px; }
+    .social-btn { display: flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--bg-card); border-radius: 4px; border: 1px solid var(--border); font-weight: 600; }
+    .social-btn:hover { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+    .contact-form { background: var(--bg-card); padding: 40px; border-radius: 12px; border: 1px solid var(--border); }
+    .contact-form h3 { font-size: 2.5rem; margin-bottom: 20px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-weight: 600; color: var(--text-light); margin-bottom: 8px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 15px; background: var(--bg-main); border: 1px solid var(--border); border-radius: 4px; color: var(--text-light); font-family: 'Barlow'; font-size: 1rem; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); }
+    .form-privacy { font-size: 0.85rem; margin-top: 20px; text-align: center; opacity: 0.7; }
+    
+    .form-success { background: var(--bg-card); padding: 60px 40px; border-radius: 12px; border: 1px solid var(--primary); text-align: center; }
+    .success-icon { font-size: 4rem; margin-bottom: 20px; }
+    .form-success h3 { font-size: 2.5rem; margin-bottom: 15px; color: var(--primary); }
+    .form-success p { margin-bottom: 30px; font-size: 1.1rem; }
+
+    .map-wrap { margin-top: 60px; filter: grayscale(100%) invert(90%) hue-rotate(180deg); opacity: 0.8; }
+
+    /* ░░ FOOTER ░░ */
+    .footer { background: var(--bg-darker); padding: 80px 0 0; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 60px; }
+    .footer-logo { margin-bottom: 20px; }
+    .footer-stars { color: #fbbf24; font-weight: 700; margin-top: 15px; }
+    .footer h4 { font-size: 1.5rem; margin-bottom: 20px; color: var(--text-light); }
+    .footer-links ul li { margin-bottom: 10px; }
+    .footer-links a:hover { color: var(--primary); }
+    .footer-phone { display: block; font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-bottom: 15px; }
+    .footer-contact p { margin-bottom: 10px; }
+    .footer-social { display: flex; gap: 10px; margin-top: 20px; }
+    .footer-social a { width: 40px; height: 40px; background: var(--bg-card); display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--border); transition: 0.3s; }
+    .footer-social a:hover { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .footer-bottom { border-top: 1px solid var(--border); padding: 25px 0; text-align: center; font-size: 0.9rem; background: #080c17; }
+    .footer-bottom p { margin-bottom: 5px; }
+
+    /* ░░ RESPONSIVE ░░ */
+    @media (max-width: 992px) {
+      .hero-title { font-size: 4.5rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; position: absolute; top: 80px; left: 0; width: 100%; background: var(--bg-main); flex-direction: column; padding: 20px; text-align: center; border-bottom: 1px solid var(--border); }
+      .nav-links.active { display: flex; }
+      .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .hero-title { font-size: 3.5rem; }
+      .hero-ctas { flex-direction: column; }
+      .trust-divider { display: none; }
+      .section-title { font-size: 2.5rem; }
+      .sticky-call { display: block; }
+      body { padding-bottom: 60px; } /* Space for sticky button */
+      .footer-grid { grid-template-columns: 1fr; text-align: center; }
+      .footer-social { justify-content: center; }
+    }
+  </style>
 </head>
 <body>
 
@@ -76,7 +306,7 @@
           <span class="logo-sub">Roofing & Restoration LLC</span>
         </div>
       </a>
-      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <nav class="nav-links" id="navLinks">
         <a href="#services">Services</a>
         <a href="#about">About</a>
         <a href="#gallery">Gallery</a>
@@ -87,50 +317,48 @@
       <a href="tel:+19362040141" class="nav-cta btn btn-orange">
         <span class="phone-icon">📞</span> (936) 204-0141
       </a>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
   <!-- ░░ STICKY CALL BUTTON (Mobile) ░░ -->
-  <a href="tel:+19362040141" class="sticky-call" aria-label="Call Storm Pros Roofing">
+  <a href="tel:+19362040141" class="sticky-call">
     📞 Call Now — (936) 204-0141
   </a>
 
   <!-- ░░░░░░░░░░░░░░░░ HERO ░░░░░░░░░░░░░░░░ -->
-  <section class="hero" id="hero" aria-label="Hero">
-    <div class="hero-bg">
-      <div class="hero-overlay"></div>
-      <div class="hero-grid-pattern"></div>
-    </div>
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid-pattern"></div>
     <div class="container hero-content">
-      <div class="hero-badge fade-up">
+      <div class="hero-badge">
         <span class="stars">★★★★★</span>
         <span>4.9 Stars · 81 Reviews · The Woodlands, TX</span>
       </div>
-      <h1 class="hero-title fade-up delay-1">
+      <h1 class="hero-title">
         <span class="title-top">STORM DAMAGE?</span>
         <span class="title-middle">WE'VE GOT YOU</span>
         <span class="title-accent">COVERED.</span>
       </h1>
-      <p class="hero-sub fade-up delay-2">
+      <p class="hero-sub">
         North Houston's most trusted roofing & storm restoration experts.<br />
         Insurance-funded repairs · Free inspections · Fast turnaround
       </p>
-      <div class="hero-ctas fade-up delay-3">
+      <div class="hero-ctas">
         <a href="#contact" class="btn btn-orange btn-lg">Get Free Roof Inspection</a>
         <a href="tel:+19362040141" class="btn btn-outline btn-lg">📞 Call Now</a>
       </div>
-      <div class="hero-trust fade-up delay-4">
-        <div class="trust-pill">✅ Free Estimates</div>
-        <div class="trust-pill">✅ Insurance Claims Specialist</div>
-        <div class="trust-pill">✅ Licensed & Insured</div>
-        <div class="trust-pill">✅ Same-Day Response</div>
+      <div class="hero-trust">
+        <div class="trust-pill"><span>✅</span> Free Estimates</div>
+        <div class="trust-pill"><span>✅</span> Insurance Claims Specialist</div>
+        <div class="trust-pill"><span>✅</span> Licensed & Insured</div>
+        <div class="trust-pill"><span>✅</span> Same-Day Response</div>
       </div>
     </div>
     <div class="hero-scroll-hint">
-      <span>Scroll</span>
+      <span>SCROLL</span>
       <div class="scroll-arrow"></div>
     </div>
   </section>
@@ -160,10 +388,8 @@
       </div>
       <div class="services-grid">
 
-        <div class="service-card reveal" data-service="repair">
-          <div class="service-icon-wrap">
-            <div class="service-icon">🔧</div>
-          </div>
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
           <h3>Roof Repair</h3>
           <p class="service-price">$250 – $5,000</p>
           <p class="service-desc">Fast, reliable repairs for leaks, missing shingles, storm damage, flashing failures, and more. We fix it right the first time.</p>
@@ -173,17 +399,15 @@
             <li>✓ Leak detection & sealing</li>
             <li>✓ Insurance claim support</li>
           </ul>
-          <a href="#contact" class="btn btn-orange service-cta">Get Free Quote</a>
+          <a href="#contact" class="btn btn-outline-dark service-cta">Get Free Quote</a>
         </div>
 
-        <div class="service-card reveal featured-service" data-service="shingle">
+        <div class="service-card featured-service">
           <div class="featured-badge">Most Popular</div>
-          <div class="service-icon-wrap">
-            <div class="service-icon">🏠</div>
-          </div>
+          <div class="service-icon">🏠</div>
           <h3>Shingle Roof</h3>
           <p class="service-price">$5,000 – $100,000</p>
-          <p class="service-desc">Complete shingle roof replacements using premium architectural shingles. Durable, beautiful, and backed by manufacturer warranties.</p>
+          <p class="service-desc">Complete shingle roof replacements using premium architectural shingles. Durable, beautiful, and backed by warranties.</p>
           <ul class="service-features">
             <li>✓ Architectural & 3-tab shingles</li>
             <li>✓ Full tear-off & disposal</li>
@@ -193,36 +417,18 @@
           <a href="#contact" class="btn btn-orange service-cta">Get Free Quote</a>
         </div>
 
-        <div class="service-card reveal" data-service="metal">
-          <div class="service-icon-wrap">
-            <div class="service-icon">⚡</div>
-          </div>
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
           <h3>Metal Roof</h3>
           <p class="service-price">$10,000 – $100,000</p>
-          <p class="service-desc">Long-lasting metal roofing systems that withstand extreme Texas weather. Energy efficient, hurricane resistant, and incredibly durable.</p>
+          <p class="service-desc">Long-lasting metal roofing systems that withstand extreme Texas weather. Energy efficient, hurricane resistant, and durable.</p>
           <ul class="service-features">
             <li>✓ Standing seam & corrugated</li>
             <li>✓ 40–70 year lifespan</li>
             <li>✓ Energy efficient</li>
             <li>✓ Wind & hail resistant</li>
           </ul>
-          <a href="#contact" class="btn btn-orange service-cta">Get Free Quote</a>
-        </div>
-
-        <div class="service-card reveal service-card-free" data-service="inspection">
-          <div class="service-icon-wrap">
-            <div class="service-icon">🔍</div>
-          </div>
-          <h3>Roof Inspection</h3>
-          <p class="service-price free-tag">FREE</p>
-          <p class="service-desc">Comprehensive drone-assisted roof inspections. We identify damage, assess risks, and help you navigate the insurance claims process.</p>
-          <ul class="service-features">
-            <li>✓ Drone + physical inspection</li>
-            <li>✓ Detailed damage report</li>
-            <li>✓ Insurance claim assistance</li>
-            <li>✓ No obligation estimate</li>
-          </ul>
-          <a href="#contact" class="btn btn-orange service-cta">Schedule Now</a>
+          <a href="#contact" class="btn btn-outline-dark service-cta">Get Free Quote</a>
         </div>
 
       </div>
@@ -231,14 +437,13 @@
 
   <!-- ░░ MID CTA BANNER ░░ -->
   <div class="cta-banner">
-    <div class="cta-banner-bg"></div>
-    <div class="container cta-banner-inner">
+    <div class="container">
       <div class="cta-banner-text">
-        <h2>Storm damaged your roof? <span class="text-orange">We work with your insurance.</span></h2>
+        <h2>Storm damaged your roof? <br>We work with your insurance.</h2>
         <p>Our experts manage the entire claims process — from inspection to final repair. Most homeowners pay $0 out of pocket.</p>
       </div>
       <div class="cta-banner-actions">
-        <a href="#contact" class="btn btn-orange btn-lg">File My Claim</a>
+        <a href="#contact" class="btn btn-orange btn-lg" style="background:#0f172a; color:#fff;">File My Claim</a>
         <a href="tel:+19362040141" class="btn btn-white-outline btn-lg">📞 (936) 204-0141</a>
       </div>
     </div>
@@ -247,133 +452,50 @@
   <!-- ░░░░░░░░░░░░░░░░ ABOUT ░░░░░░░░░░░░░░░░ -->
   <section class="section about-section" id="about">
     <div class="container about-grid">
-      <div class="about-visual reveal">
-        <div class="about-img-block">
-          <div class="about-img-placeholder">
-            <div class="about-img-inner">
-              <div class="roof-graphic">
-                <div class="roof-peak"></div>
-                <div class="roof-body">
-                  <div class="roof-shingles">
-                    <div class="shingle-row"></div>
-                    <div class="shingle-row"></div>
-                    <div class="shingle-row"></div>
-                    <div class="shingle-row"></div>
-                    <div class="shingle-row"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="about-stat-badge">
-                <span class="stat-big">4.9</span>
-                <span class="stat-stars">★★★★★</span>
-                <span class="stat-label">Google Rating</span>
-              </div>
-            </div>
-          </div>
+      <div class="about-visual">
+        <div class="roof-graphic">🏠</div>
+        <div class="about-stat-badge">
+          <span class="stat-big">4.9</span>
+          <span class="stars">★★★★★</span>
+          <br><span style="font-size:0.9rem; text-transform:uppercase;">Google Rating</span>
         </div>
       </div>
-      <div class="about-content reveal">
+      <div class="about-content">
         <span class="section-label">About Us</span>
         <h2 class="section-title">North Houston's Storm<br /><em>Restoration Experts</em></h2>
-        <p class="about-lead">Storm Pros Roofing and Restoration is a <strong>top residential storm restoration and construction contractor</strong> in the North Houston area, specializing in insurance-funded projects after natural disasters.</p>
+        <p class="about-lead">Storm Pros Roofing and Restoration is a top residential contractor specializing in insurance-funded projects after natural disasters.</p>
         <p class="about-body">When storms hit The Woodlands and surrounding communities, we're the team neighbors call first. Our crews are trained specifically in storm damage assessment, working hand-in-hand with insurance companies to make the process seamless for homeowners.</p>
         <div class="about-values">
           <div class="value-item">
             <span class="value-icon">🛡️</span>
             <div>
-              <strong>Licensed & Fully Insured</strong>
-              <p>Your home is protected at every step.</p>
+              <strong>Licensed & Insured</strong>
+              <p style="font-size:0.9rem;">Your home is protected.</p>
             </div>
           </div>
           <div class="value-item">
             <span class="value-icon">📋</span>
             <div>
-              <strong>Insurance Claim Experts</strong>
-              <p>We've handled hundreds of successful claims.</p>
+              <strong>Claim Experts</strong>
+              <p style="font-size:0.9rem;">Hundreds of successful claims.</p>
             </div>
           </div>
           <div class="value-item">
             <span class="value-icon">⚡</span>
             <div>
-              <strong>Fast Response Time</strong>
-              <p>Same-day inspections after storm events.</p>
+              <strong>Fast Response</strong>
+              <p style="font-size:0.9rem;">Same-day inspections.</p>
             </div>
           </div>
           <div class="value-item">
             <span class="value-icon">🏆</span>
             <div>
               <strong>4.9 Star Rated</strong>
-              <p>81+ verified 5-star reviews from real customers.</p>
+              <p style="font-size:0.9rem;">81+ verified 5-star reviews.</p>
             </div>
           </div>
         </div>
         <a href="#contact" class="btn btn-orange">Get Your Free Inspection</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ░░░░░░░░░░░░░░░░ GALLERY ░░░░░░░░░░░░░░░░ -->
-  <section class="section gallery-section" id="gallery">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Our Work</span>
-        <h2 class="section-title">Recent Projects</h2>
-        <p class="section-sub">See the quality and craftsmanship we bring to every roof we touch.</p>
-      </div>
-      <div class="gallery-grid">
-        <div class="gallery-item reveal" style="--delay:0s">
-          <div class="gallery-placeholder gp-1">
-            <div class="gallery-overlay">
-              <span>Shingle Replacement</span>
-              <small>The Woodlands, TX</small>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item reveal" style="--delay:0.1s">
-          <div class="gallery-placeholder gp-2">
-            <div class="gallery-overlay">
-              <span>Storm Damage Repair</span>
-              <small>Conroe, TX</small>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item reveal" style="--delay:0.2s">
-          <div class="gallery-placeholder gp-3">
-            <div class="gallery-overlay">
-              <span>Metal Roof Install</span>
-              <small>Spring, TX</small>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item reveal" style="--delay:0.3s">
-          <div class="gallery-placeholder gp-4">
-            <div class="gallery-overlay">
-              <span>Full Replacement</span>
-              <small>Humble, TX</small>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item reveal" style="--delay:0.4s">
-          <div class="gallery-placeholder gp-5">
-            <div class="gallery-overlay">
-              <span>Hail Damage Repair</span>
-              <small>Kingwood, TX</small>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item reveal" style="--delay:0.5s">
-          <div class="gallery-placeholder gp-6">
-            <div class="gallery-overlay">
-              <span>Insurance Project</span>
-              <small>The Woodlands, TX</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="gallery-footer">
-        <a href="https://www.youtube.com/channel/UC5KI1YKkeomWTnJiIMNT3NA/featured" target="_blank" rel="noopener" class="btn btn-outline-dark">
-          ▶ Watch Our Work on YouTube
-        </a>
       </div>
     </div>
   </section>
@@ -384,50 +506,48 @@
       <div class="section-header">
         <span class="section-label">AI-Powered Tool</span>
         <h2 class="section-title">Roof Cost Estimator</h2>
-        <p class="section-sub">Get an instant ballpark estimate for your roofing project. For a precise quote, schedule your free inspection.</p>
+        <p class="section-sub">Get an instant ballpark estimate for your project. Adjust the sliders to see your projected cost.</p>
       </div>
       <div class="estimator-card">
-        <div class="estimator-form">
-          <div class="est-row">
-            <label for="roofSize">Roof Size (sq ft)</label>
-            <div class="est-slider-wrap">
-              <input type="range" id="roofSize" min="500" max="5000" value="1500" step="100" />
-              <span class="est-val" id="roofSizeVal">1,500 sq ft</span>
-            </div>
-          </div>
-          <div class="est-row">
-            <label>Roof Type</label>
-            <div class="est-tabs">
-              <button class="est-tab active" data-type="shingle">Shingle</button>
-              <button class="est-tab" data-type="metal">Metal</button>
-              <button class="est-tab" data-type="repair">Repair Only</button>
-            </div>
-          </div>
-          <div class="est-row">
-            <label for="roofPitch">Roof Pitch</label>
-            <div class="est-tabs">
-              <button class="est-tab active" data-pitch="low">Low (4/12)</button>
-              <button class="est-tab" data-pitch="medium">Medium (6/12)</button>
-              <button class="est-tab" data-pitch="steep">Steep (9/12+)</button>
-            </div>
-          </div>
-          <div class="est-row">
-            <label for="stormDamage">Storm Damage?</label>
-            <div class="est-tabs">
-              <button class="est-tab" data-storm="yes">Yes (Insurance)</button>
-              <button class="est-tab active" data-storm="no">No</button>
-            </div>
+        <div class="est-row">
+          <label>Roof Size (sq ft)</label>
+          <div class="est-slider-wrap">
+            <input type="range" id="estSize" min="500" max="5000" value="1500" step="100" />
+            <span class="est-val" id="estSizeVal">1,500 sq ft</span>
           </div>
         </div>
+        <div class="est-row">
+          <label>Material Type</label>
+          <div class="est-tabs" id="estMaterial">
+            <div class="est-tab active" data-val="shingle">Shingle</div>
+            <div class="est-tab" data-val="metal">Metal</div>
+          </div>
+        </div>
+        <div class="est-row">
+          <label>Roof Pitch</label>
+          <div class="est-tabs" id="estPitch">
+            <div class="est-tab" data-val="low">Low</div>
+            <div class="est-tab active" data-val="medium">Medium</div>
+            <div class="est-tab" data-val="steep">Steep</div>
+          </div>
+        </div>
+        <div class="est-row">
+          <label>Storm Damage? (Filing Insurance Claim)</label>
+          <div class="est-tabs" id="estInsurance">
+            <div class="est-tab" data-val="yes">Yes</div>
+            <div class="est-tab active" data-val="no">No</div>
+          </div>
+        </div>
+        
         <div class="estimator-result">
           <div class="result-label">Estimated Range</div>
-          <div class="result-price" id="resultPrice">$8,500 – $14,200</div>
-          <div class="result-note" id="resultNote">Based on 1,500 sq ft shingle roof, medium pitch</div>
-          <div class="result-insurance" id="resultInsurance" style="display:none">
-            🎉 <strong>Insurance may cover this!</strong> Most storm damage claims are fully covered. Get a free inspection to find out.
+          <div class="result-price" id="estPriceResult">$8,500 – $12,500</div>
+          <div class="result-note" id="estNoteResult">Based on 1,500 sq ft Shingle roof</div>
+          <div class="result-insurance" id="estInsMsg" style="display:none;">
+            🎉 <strong>Insurance coverage detected!</strong> If approved, your out-of-pocket cost is typically just your deductible ($1,000 - $3,000).
           </div>
-          <a href="#contact" class="btn btn-orange btn-block">Get Accurate Free Quote</a>
-          <p class="result-disclaimer">*Estimates are approximate. Actual pricing varies by materials, labor, and site conditions.</p>
+          <a href="#contact" class="btn btn-orange btn-block btn-lg" style="margin-top:20px;">Schedule Exact Free Quote</a>
+          <p class="result-disclaimer">*Estimates are approximate. Actual pricing varies by site conditions.</p>
         </div>
       </div>
     </div>
@@ -442,226 +562,92 @@
         <div class="overall-rating">
           <span class="big-stars">★★★★★</span>
           <span class="big-score">4.9</span>
-          <span class="big-count">Based on 81 Google reviews</span>
+          <span>Based on 81 Google reviews</span>
         </div>
       </div>
       <div class="reviews-grid">
-
-        <div class="review-card reveal">
+        <div class="review-card">
           <div class="review-header">
             <div class="reviewer-avatar">MJ</div>
-            <div class="reviewer-info">
-              <strong>Michael J.</strong>
-              <span>The Woodlands, TX</span>
-            </div>
+            <div class="reviewer-info"><strong>Michael J.</strong><span>The Woodlands, TX</span></div>
             <div class="review-stars">★★★★★</div>
           </div>
-          <p>"Storm Pros came out within hours of the hail storm. They documented everything, handled my insurance claim perfectly, and had a brand new roof on my house within a week. <strong>Could not be happier.</strong> 10/10 recommend to everyone in the neighborhood!"</p>
-          <span class="review-date">3 weeks ago · Google</span>
+          <p>"Storm Pros came out within hours of the hail storm. They handled my insurance claim perfectly, and had a brand new roof on my house within a week. 10/10 recommend!"</p>
         </div>
-
-        <div class="review-card reveal">
+        <div class="review-card">
           <div class="review-header">
             <div class="reviewer-avatar">SR</div>
-            <div class="reviewer-info">
-              <strong>Sandra R.</strong>
-              <span>Conroe, TX</span>
-            </div>
+            <div class="reviewer-info"><strong>Sandra R.</strong><span>Conroe, TX</span></div>
             <div class="review-stars">★★★★★</div>
           </div>
-          <p>"I was nervous about the whole insurance process but Storm Pros made it completely stress-free. They dealt with the adjuster directly and we ended up paying almost nothing out of pocket. <strong>Exceptional service from start to finish.</strong>"</p>
-          <span class="review-date">1 month ago · Google</span>
+          <p>"I was nervous about the insurance process but they made it completely stress-free. They dealt with the adjuster directly. Exceptional service from start to finish."</p>
         </div>
-
-        <div class="review-card reveal">
+        <div class="review-card">
           <div class="review-header">
             <div class="reviewer-avatar">DL</div>
-            <div class="reviewer-info">
-              <strong>David L.</strong>
-              <span>Spring, TX</span>
-            </div>
+            <div class="reviewer-info"><strong>David L.</strong><span>Spring, TX</span></div>
             <div class="review-stars">★★★★★</div>
           </div>
-          <p>"Got three quotes and Storm Pros was not only the most competitive but by far the most professional. The crew was clean, fast, and the metal roof looks absolutely incredible. <strong>Worth every penny.</strong> My neighbors have already asked for their number."</p>
-          <span class="review-date">2 months ago · Google</span>
+          <p>"Got three quotes and Storm Pros was not only the most competitive but by far the most professional. The crew was clean, fast, and the roof looks absolutely incredible."</p>
         </div>
-
-        <div class="review-card reveal">
-          <div class="review-header">
-            <div class="reviewer-avatar">TH</div>
-            <div class="reviewer-info">
-              <strong>Tina H.</strong>
-              <span>Kingwood, TX</span>
-            </div>
-            <div class="review-stars">★★★★★</div>
-          </div>
-          <p>"After Hurricane Harvey and then the 2021 freeze, I thought my roof was done for. Storm Pros inspected it for free, filed my insurance claim, and did a complete replacement. <strong>Honest, fast, and fair pricing.</strong> I'm a customer for life."</p>
-          <span class="review-date">2 months ago · Google</span>
-        </div>
-
-        <div class="review-card reveal">
-          <div class="review-header">
-            <div class="reviewer-avatar">RC</div>
-            <div class="reviewer-info">
-              <strong>Robert C.</strong>
-              <span>Humble, TX</span>
-            </div>
-            <div class="review-stars">★★★★★</div>
-          </div>
-          <p>"They found damage I didn't even know I had during the free inspection. The team was thorough, explained everything, and completed the job ahead of schedule. <strong>Highly professional and trustworthy.</strong> A+ company."</p>
-          <span class="review-date">3 months ago · Google</span>
-        </div>
-
-        <div class="review-card reveal">
-          <div class="review-header">
-            <div class="reviewer-avatar">KM</div>
-            <div class="reviewer-info">
-              <strong>Karen M.</strong>
-              <span>The Woodlands, TX</span>
-            </div>
-            <div class="review-stars">★★★★★</div>
-          </div>
-          <p>"The communication throughout the entire project was top-notch. They sent updates, photos, and were always available to answer questions. <strong>The new shingle roof is beautiful</strong> and I have complete peace of mind knowing it was done right."</p>
-          <span class="review-date">4 months ago · Google</span>
-        </div>
-
-      </div>
-      <div class="reviews-footer">
-        <a href="https://www.google.com/search?q=Storm+Pros+Roofing+Restoration+LLC" target="_blank" rel="noopener" class="btn btn-outline-dark">
-          See All 81 Reviews on Google ↗
-        </a>
       </div>
     </div>
   </section>
 
-  <!-- ░░ SERVICE AREA BANNER ░░ -->
-  <div class="area-banner">
-    <div class="container">
-      <h3>Proudly Serving The Woodlands & Surrounding Areas</h3>
-      <div class="area-list">
-        <span>The Woodlands</span>
-        <span>Conroe</span>
-        <span>Spring</span>
-        <span>Humble</span>
-        <span>Kingwood</span>
-        <span>Tomball</span>
-        <span>Magnolia</span>
-        <span>North Houston</span>
-      </div>
-    </div>
-  </div>
-
   <!-- ░░░░░░░░░░░░░░░░ CONTACT ░░░░░░░░░░░░░░░░ -->
   <section class="section contact-section" id="contact">
     <div class="container contact-grid">
-      <div class="contact-info reveal">
+      <div class="contact-info">
         <span class="section-label">Get In Touch</span>
         <h2 class="section-title">Request Your<br /><em>Free Inspection</em></h2>
-        <p>Don't wait — storm damage gets worse over time. Contact us today for a no-obligation roof inspection and estimate.</p>
+        <p style="margin-bottom:30px;">Don't wait — storm damage gets worse over time. Contact us today for a no-obligation roof inspection and estimate.</p>
 
         <div class="contact-details">
-          <a href="tel:+19362040141" class="contact-item contact-phone">
-            <span class="contact-icon">📞</span>
-            <div>
-              <strong>Call / Text</strong>
-              <span>(936) 204-0141</span>
-            </div>
-          </a>
           <div class="contact-item">
-            <span class="contact-icon">📍</span>
-            <div>
-              <strong>Address</strong>
-              <span>1601 Primrose St, Conroe, TX 77385</span>
-            </div>
+            <div class="contact-icon">📞</div>
+            <div><strong>Call / Text</strong><span style="color:var(--primary); font-weight:700; font-size:1.2rem;">(936) 204-0141</span></div>
           </div>
           <div class="contact-item">
-            <span class="contact-icon">🕐</span>
-            <div>
-              <strong>Hours</strong>
-              <span>Mon–Fri: 7AM–6PM · Emergency: 24/7</span>
-            </div>
+            <div class="contact-icon">📍</div>
+            <div><strong>Address</strong><span>1601 Primrose St, Conroe, TX 77385</span></div>
           </div>
           <div class="contact-item">
-            <span class="contact-icon">🌐</span>
-            <div>
-              <strong>Service Area</strong>
-              <span>The Woodlands & North Houston</span>
-            </div>
+            <div class="contact-icon">🕐</div>
+            <div><strong>Hours</strong><span>Mon–Fri: 7AM–6PM · Emergency: 24/7</span></div>
           </div>
-        </div>
-
-        <div class="contact-social">
-          <a href="https://www.facebook.com/StormProsRoofingandRestoration/" target="_blank" rel="noopener" class="social-btn fb" aria-label="Facebook">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            Facebook
-          </a>
-          <a href="https://www.youtube.com/channel/UC5KI1YKkeomWTnJiIMNT3NA/featured" target="_blank" rel="noopener" class="social-btn yt" aria-label="YouTube">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            YouTube
-          </a>
         </div>
       </div>
 
-      <div class="contact-form-wrap reveal">
-        <form class="contact-form" id="contactForm" novalidate>
+      <div class="contact-form-wrap">
+        <form class="contact-form" id="mainContactForm">
           <h3>Get Your Free Quote</h3>
           <div class="form-group">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" placeholder="John Smith" required autocomplete="name" />
-            <span class="form-hint" id="nameHint"></span>
+            <label>Full Name *</label>
+            <input type="text" required placeholder="John Smith" />
           </div>
           <div class="form-group">
-            <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" name="phone" placeholder="(936) 555-0000" required autocomplete="tel" />
-            <span class="form-hint" id="phoneHint"></span>
+            <label>Phone Number *</label>
+            <input type="tel" required placeholder="(936) 555-0000" />
           </div>
           <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email" />
-          </div>
-          <div class="form-group">
-            <label for="service">Service Needed *</label>
-            <select id="service" name="service" required>
-              <option value="">— Select a service —</option>
-              <option value="free-inspection">Free Roof Inspection</option>
-              <option value="roof-repair">Roof Repair ($250–$5,000)</option>
-              <option value="shingle-roof">Shingle Roof ($5K–$100K)</option>
-              <option value="metal-roof">Metal Roof ($10K–$100K)</option>
-              <option value="insurance-claim">Insurance Claim Assistance</option>
-              <option value="other">Other</option>
+            <label>Service Needed</label>
+            <select>
+              <option>Free Roof Inspection</option>
+              <option>Roof Repair</option>
+              <option>Full Roof Replacement</option>
+              <option>Insurance Claim Help</option>
             </select>
           </div>
-          <div class="form-group">
-            <label for="message">Tell Us More</label>
-            <textarea id="message" name="message" rows="3" placeholder="Describe your roofing issue or question..."></textarea>
-          </div>
-          <div class="form-smart-tip" id="smartTip" style="display:none">
-            <span class="tip-icon">💡</span>
-            <span id="smartTipText"></span>
-          </div>
-          <button type="submit" class="btn btn-orange btn-block btn-lg" id="submitBtn">
-            Send My Request →
-          </button>
-          <p class="form-privacy">🔒 Your info is safe. No spam, ever. We'll call you within 1 business hour.</p>
+          <button type="submit" class="btn btn-orange btn-block btn-lg">Send My Request →</button>
+          <p class="form-privacy">🔒 Your info is safe. We'll call you within 1 business hour.</p>
         </form>
-        <div class="form-success" id="formSuccess" style="display:none">
+        
+        <div class="form-success" id="formSuccessMsg" style="display:none;">
           <div class="success-icon">✅</div>
           <h3>Request Received!</h3>
           <p>Thanks! One of our roofing experts will call you within 1 business hour to schedule your free inspection.</p>
-          <a href="tel:+19362040141" class="btn btn-orange">📞 Call Us Now Instead</a>
         </div>
       </div>
-
-    </div>
-
-    <!-- Google Maps Embed -->
-    <div class="map-wrap">
-      <iframe
-        title="Storm Pros Roofing Location"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.5!2d-95.4652!3d30.2672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDE2JzAxLjkiTiA5NcKwMjcnNTQuNyJX!5e0!3m2!1sen!2sus!4v1234567890"
-        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
     </div>
   </section>
 
@@ -671,15 +657,11 @@
       <div class="footer-brand">
         <div class="logo footer-logo">
           <span class="logo-icon">🏠</span>
-          <div class="logo-text">
-            <span class="logo-main">STORM PROS</span>
-            <span class="logo-sub">Roofing & Restoration LLC</span>
-          </div>
+          <div class="logo-text"><span class="logo-main">STORM PROS</span><span class="logo-sub" style="color:var(--text-main);">Roofing & Restoration</span></div>
         </div>
         <p>North Houston's most trusted roofing contractor. Specializing in storm restoration and insurance-funded repairs.</p>
         <div class="footer-stars">★★★★★ 4.9 · 81 Reviews</div>
       </div>
-
       <div class="footer-links">
         <h4>Services</h4>
         <ul>
@@ -687,47 +669,120 @@
           <li><a href="#services">Shingle Roof</a></li>
           <li><a href="#services">Metal Roof</a></li>
           <li><a href="#services">Free Inspection</a></li>
-          <li><a href="#services">Insurance Claims</a></li>
         </ul>
       </div>
-
       <div class="footer-links">
         <h4>Company</h4>
         <ul>
           <li><a href="#about">About Us</a></li>
-          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#contact">Contact</a></li>
           <li><a href="#estimator">Cost Estimator</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
-
       <div class="footer-contact">
         <h4>Contact</h4>
         <a href="tel:+19362040141" class="footer-phone">(936) 204-0141</a>
         <p>1601 Primrose St<br />Conroe, TX 77385</p>
-        <p>Mon–Fri: 7AM–6PM<br />Emergency: 24/7</p>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/StormProsRoofingandRestoration/" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-          <a href="https://www.youtube.com/channel/UC5KI1YKkeomWTnJiIMNT3NA/featured" target="_blank" rel="noopener" aria-label="YouTube">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          </a>
-        </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <p>© 2025 Storm Pros Roofing & Restoration LLC · All Rights Reserved · Conroe, TX</p>
-        <p>Serving: The Woodlands · Conroe · Spring · Humble · Kingwood · North Houston</p>
+      <div class="container">
+        <p>© 2026 Storm Pros Roofing & Restoration LLC · All Rights Reserved</p>
+        <p style="opacity:0.6; font-size:0.8rem; margin-top:5px;">Serving: The Woodlands, Conroe, Spring, Humble, Kingwood, North Houston</p>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- EMBEDDED JAVASCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      /* --- Mobile Menu Toggle --- */
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => { navLinks.classList.remove('active'); });
+      });
 
-  <!-- Botpress Webchat Integration -->
+      /* --- Cost Estimator Logic --- */
+      const estSize = document.getElementById('estSize');
+      const estSizeVal = document.getElementById('estSizeVal');
+      const estPriceResult = document.getElementById('estPriceResult');
+      const estNoteResult = document.getElementById('estNoteResult');
+      const estInsMsg = document.getElementById('estInsMsg');
+      
+      let state = { size: 1500, material: 'shingle', pitch: 'medium', insurance: 'no' };
+
+      // Base price per sq ft based on material
+      const rates = { shingle: { low: 4.5, high: 6.5 }, metal: { low: 9.0, high: 14.0 } };
+      // Pitch multipliers
+      const multipliers = { low: 1, medium: 1.1, steep: 1.3 };
+
+      function updateEstimator() {
+        // Calculate
+        let baseLow = rates[state.material].low;
+        let baseHigh = rates[state.material].high;
+        let pitchMult = multipliers[state.pitch];
+        
+        let totalLow = Math.round((state.size * baseLow * pitchMult) / 100) * 100;
+        let totalHigh = Math.round((state.size * baseHigh * pitchMult) / 100) * 100;
+
+        // Update UI
+        estSizeVal.innerText = state.size.toLocaleString() + " sq ft";
+        estPriceResult.innerText = `$${totalLow.toLocaleString()} – $${totalHigh.toLocaleString()}`;
+        estNoteResult.innerText = `Based on ${state.size.toLocaleString()} sq ft ${state.material.charAt(0).toUpperCase() + state.material.slice(1)} roof`;
+        
+        if(state.insurance === 'yes') {
+          estInsMsg.style.display = 'block';
+          estPriceResult.style.color = '#4ade80';
+        } else {
+          estInsMsg.style.display = 'none';
+          estPriceResult.style.color = 'var(--primary)';
+        }
+      }
+
+      // Slider event
+      estSize.addEventListener('input', (e) => {
+        state.size = parseInt(e.target.value);
+        updateEstimator();
+      });
+
+      // Tab events
+      function setupTabs(containerId, stateKey) {
+        const container = document.getElementById(containerId);
+        const tabs = container.querySelectorAll('.est-tab');
+        tabs.forEach(tab => {
+          tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            state[stateKey] = tab.dataset.val;
+            updateEstimator();
+          });
+        });
+      }
+      setupTabs('estMaterial', 'material');
+      setupTabs('estPitch', 'pitch');
+      setupTabs('estInsurance', 'insurance');
+
+      // Initialize
+      updateEstimator();
+
+      /* --- Form Submit Simulation --- */
+      const contactForm = document.getElementById('mainContactForm');
+      const formSuccessMsg = document.getElementById('formSuccessMsg');
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        contactForm.style.display = 'none';
+        formSuccessMsg.style.display = 'block';
+      });
+    });
+  </script>
+
+  <!-- ░░░ BOTPRESS WEBCHAT INTEGRATION ░░░ -->
   <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
   <script>
     window.botpress.init({
@@ -737,12 +792,7 @@
       "configuration": {
         "botName": "Storm Pros Assistant",
         "botDescription": "24/7 AI Receptionist",
-        "website": {},
-        "email": {},
-        "phone": {},
-        "termsOfService": {},
-        "privacyPolicy": {},
-        "color": "#e65100",
+        "color": "#f97316",
         "variant": "solid",
         "themeMode": "light",
         "fontFamily": "inter",
