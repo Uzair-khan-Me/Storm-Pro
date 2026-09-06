@@ -186,6 +186,31 @@
     .gallery-overlay small { color: var(--primary); font-weight: 700; text-transform: uppercase; }
     .gallery-footer { text-align: center; }
 
+    /* ░░░░░░░░░░░░░░░░ VIDEO DEMO SECTION ░░░░░░░░░░░░░░░░ */
+  <section class="section demo-section" id="demo">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+        <span class="section-label">Live Demo</span>
+        <h2 class="section-title">See The AI Agent<br/><em>In Action</em></h2>
+        <p class="section-sub">Watch how our custom AI receptionist qualifies leads and books jobs 24/7.</p>
+      </div>
+      
+      <!-- Video Player Wrapper -->
+      <div style="max-width: 800px; margin: 0 auto; background: var(--bg-card); padding: 10px; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <video width="100%" controls preload="metadata" style="border-radius: 8px; display: block;">
+          <!-- Make sure your video file is named demo.mp4 and placed in your public/videos folder -->
+          <source src="/videos/demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- Call to Action -->
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="https://storm-pro.vercel.app/" class="btn btn-orange btn-lg">Test The Bot Live</a>
+      </div>
+    </div>
+  </section>
+
     /* ░░ ESTIMATOR ░░ */
     .estimator-wrap { max-width: 800px; margin: 0 auto; }
     .estimator-card { background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border); padding: 40px; }
