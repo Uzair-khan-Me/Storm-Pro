@@ -179,6 +179,38 @@
     .value-icon { font-size: 1.5rem; }
     .value-item strong { display: block; color: var(--text-light); margin-bottom: 5px; }
 
+    /* ░░ VIDEO DEMO SECTION ░░ */
+    .video-container-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(249, 115, 22, 0.15);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .video-container-wrap:hover {
+      border-color: var(--primary);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(249, 115, 22, 0.25);
+    }
+    .video-responsive {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #000;
+    }
+    .video-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     /* ░░ GALLERY ░░ */
     .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 40px; }
     .gallery-placeholder { background: var(--bg-card); height: 250px; border-radius: 8px; position: relative; overflow: hidden; border: 1px solid var(--border); display: flex; align-items: flex-end; padding: 20px; }
@@ -291,6 +323,7 @@
       body { padding-bottom: 60px; } /* Space for sticky button */
       .footer-grid { grid-template-columns: 1fr; text-align: center; }
       .footer-social { justify-content: center; }
+      .video-container-wrap { padding: 10px; border-radius: 12px; }
     }
   </style>
 </head>
@@ -309,7 +342,7 @@
       <nav class="nav-links" id="navLinks">
         <a href="#services">Services</a>
         <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
+        <a href="#demo">Demo</a>
         <a href="#reviews">Reviews</a>
         <a href="#estimator">Estimator</a>
         <a href="#contact">Contact</a>
@@ -496,6 +529,29 @@
           </div>
         </div>
         <a href="#contact" class="btn btn-orange">Get Your Free Inspection</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░░░░░░░░░░░░░░ VIDEO DEMO SECTION ░░░░░░░░░░░░░░░░ -->
+  <section class="section video-section" id="demo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Interactive Overview</span>
+        <h2 class="section-title">See How Our Assistant<br/><em>Handles Storm Emergencies</em></h2>
+        <p class="section-sub">Watch how our automated assistant answers inquiries 24/7, qualifies property damage, and connects homeowners with expert roofers instantly.</p>
+      </div>
+      <div class="video-container-wrap">
+        <div class="video-responsive">
+          <iframe 
+            src="https://www.youtube.com/embed/fzKwokrIoCE" 
+            title="Storm Pros AI Assistant Demo" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen 
+            loading="lazy">
+          </iframe>
+        </div>
       </div>
     </div>
   </section>
